@@ -14,4 +14,4 @@ jobs:
         node-version: 16.1.0
     - run: npm --version
     - run: npm install --legacy-peer-deps
-    - run: apollo schema:download --endpoint=https://gitlab.com/api/graphql schema.json
+    - run: ./node_modules/.bin/apollo schema:download --endpoint=https://gitlab.com/api/graphql schema.json
