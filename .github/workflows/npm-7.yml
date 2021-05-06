@@ -1,0 +1,17 @@
+
+name: Generate schema (NPM 7)
+on:
+  - push
+
+jobs:
+  npm-install:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js 16.1.0
+      uses: actions/setup-node@v1
+      with:
+        node-version: 16.1.0
+    - run: npm --version
+    - run: npm install
+    - run: apollo schema:download --endpoint=https://gitlab.com/api/graphql schema.json
